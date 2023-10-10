@@ -1,0 +1,16 @@
+{
+    "name": "mythicalsystems/api",
+    "description": "The source code of the api application that we use to collect data and much more",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "NaysKutzu",
+            "email": "ghermancassian2008@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "mythicalsystems/php-router": "^1.0"
+    }
+}
