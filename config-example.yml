@@ -1,0 +1,34 @@
+app:
+  name: ''
+  logo: ''
+  banner: ''
+  description: ''
+  encryptionkey: ''
+  registration: false
+
+links:
+  website: ''
+  status: ''
+  phpmyadmin: ''
+  discord: ''
+  github: ''
+  paypal: ''
+  privacy_policy: ''
+  terms_of_service: ''
+  docs: ''
+  company_houses: ''
+
+data: 
+  encryptionkey: ''
+
+cloudflare:
+  enable: true
+  key: ''
+  secret: ''
+
+database:
+  host: ''
+  port: ''
+  username: ''
+  password: ''
+  name: ''

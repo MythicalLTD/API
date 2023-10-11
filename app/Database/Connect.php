@@ -1,7 +1,7 @@
 <?php
 namespace MythicalSystems\Database;
+use mysqli;
 use MythicalSystems\AppConfig;
-use PDO;
 
 class Connect
 {
@@ -14,11 +14,7 @@ class Connect
     $dbPassword = $config->get('database')['password'];
     $dbName = $config->get('database')['name'];
 
-    $dsn = "mysql:host=$dbHost;port=$dbPort;dbname=$dbName";
-
-    $conn = new PDO($dsn, $dbUsername, $dbPassword);
-
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = new mysqli($dbHost . ':' . $dbPort, $dbUsername, $dbPassword, $dbName);;
 
     return $conn;
   }

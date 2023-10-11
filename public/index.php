@@ -14,6 +14,7 @@ $router = new \Router\Router();
 include(__DIR__."/../routes/base.php");
 include(__DIR__."/../routes/auth.php");
 include(__DIR__."/../routes/projects.php");
+include(__DIR__."/../routes/ui.php");
 
 $router->add("/(.*)", function () {
     require("../api/errors/404.php");
