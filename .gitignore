@@ -1,3 +1,4 @@
 /vendor/
 /logs/telemetry.app-access.log
 /logs/telemetry.app-error.log
+/config.yml

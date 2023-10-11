@@ -12,10 +12,22 @@ try {
 $router = new \Router\Router();
 
 include(__DIR__."/../routes/base.php");
+include(__DIR__."/../routes/auth.php");
+include(__DIR__."/../routes/projects.php");
 
 $router->add("/(.*)", function () {
     require("../api/errors/404.php");
 });
 
-$router->route();  
+try {
+    $router->route();  
+} catch (Exception $ex) {
+    $rsp = array(
+        "code" => 500,
+        "error" => "The server encountered a situation it doesn't know how to handle.",
+        "message" => $ex
+    );
+    http_response_code(500);
+    die(json_encode($rsp, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+}
 ?>

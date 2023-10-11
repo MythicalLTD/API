@@ -3,14 +3,29 @@
     "description": "The source code of the api application that we use to collect data and much more",
     "type": "project",
     "license": "MIT",
+    "keywords": [
+        "mythicalsystems",
+        "mythicalsystemsapi",
+        "mythical",
+        "nayskutzu"
+    ],
     "authors": [
         {
             "name": "NaysKutzu",
-            "email": "ghermancassian2008@gmail.com"
+            "email": "ghermancassian2008@gmail.com",
+            "homepage": "https://github.com/NaysKutzu",
+            "role": "Developer"
         }
     ],
     "minimum-stability": "stable",
     "require": {
-        "mythicalsystems/php-router": "^1.0"
+        "mythicalsystems/php-router": "^1.0",
+        "ext-pdo": "*",
+        "symfony/yaml": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "MythicalSystems\\": "app/"
+        }
     }
 }
