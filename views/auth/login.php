@@ -3,11 +3,10 @@ session_start();
 $csrf = new MythicalSystems\CSRF;
 use MythicalSystems\AppConfig;
 use MythicalSystems\CloudFlare\Captcha;
-use MythicalSystems\Database\Connect;
 use MythicalSystems\Session\SessionManager;
-
-$session = new SessionManager;
+use MythicalSystems\Database\Connect;
 $conn = new Connect();
+$session = new SessionManager;
 $captcha = new Captcha();
 $appConfig = new AppConfig();
 $conn = $conn->connectToDatabase();
@@ -39,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 $cookie_value = $token;
                                 setcookie($cookie_name, $cookie_value, time() + (10 * 365 * 24 * 60 * 60), '/');
                                 $conn->close();
-                                header('location: /ui/dashboard');
+                                header('location: /ui');
                                 die();
                             } else {
                                 header("location: /ui/auth/login?e=Sorry, but the password is wrong.");
@@ -68,45 +67,84 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>
-        <?= $appConfig->get('app')['name'] ?> - Login
-    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $appConfig->get('app')['name'] ?> - Login</title>
     <link rel="icon" type="image/png" href="<?= $appConfig->get('app')['logo'] ?>">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add custom dark theme styles -->
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 400px;
+            background-color: #343a40;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            font-weight: bold;
+            color: #fff;
+        }
+        form {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cf-turnstile {
+            margin-top: 20px;
+        }
+    </style>
 </head>
-
 <body>
-    <p>Welcome to
-        <?= $appConfig->get('app')['name'] ?>
-        !
-    </p>
-    <h3>
+    <div class="container">
+        <h2 class="text-center"><?= $appConfig->get('app')['name'] ?> Login</h2>
         <?php
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            if (isset($_GET['e'])) {
-                echo $_GET['e'];
-            }
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['e'])) {
+            echo '<div class="alert alert-danger" role="alert">' . $_GET['e'] . '</div>';
+        } 
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['s'])) {
+            echo '<div class="alert alert-success" role="alert">' . $_GET['s'] . '</div>';
         }
         ?>
-    </h3>
-    <form action="/ui/auth/login" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username"><br>
-        <label for="password">Password:</label>
-        <input type="password" name="password"><br>
-        <?= $csrf->input('login-form'); ?>
-        <?php
-        if ($appConfig->get('cloudflare')['enable'] == true) {
-            ?>
-            <div class="cf-turnstile" data-sitekey="<?= $appConfig->get('cloudflare')['key'] ?>"></div>
+        <form action="/ui/auth/login" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input required type="text" name="username" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input required type="password" name="password" class="form-control">
+            </div>
+            <center>
+            <?= $csrf->input('login-form'); ?>
             <?php
-        }
-        ?>
-        <button type="submit" name="submit">Login</button>
-    </form>
-</body>
+            if ($appConfig->get('cloudflare')['enable'] == true) {
+                ?>
+                <div class="cf-turnstile" data-sitekey="<?= $appConfig->get('cloudflare')['key']?>"></div>
+                <?php
+            }
+            ?>
+            <button type="submit" name="submit">Login</button></center>
+        </form>
+    </div>
 
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
 </html>

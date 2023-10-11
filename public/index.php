@@ -20,8 +20,9 @@ $router->add("/(.*)", function () {
     require("../api/errors/404.php");
 });
 
+$router->route();  
 try {
-    $router->route();  
+   
 } catch (Exception $ex) {
     $rsp = array(
         "code" => 500,
