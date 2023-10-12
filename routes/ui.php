@@ -11,4 +11,8 @@ $router->add('/ui/telemetry', function () {
 $router->add('/ui/problems', function () {
     require("../views/problems.php");
 });
+
+$router->add('/ui/problems/show', function () {
+    require("../views/show_problem.php");
+});
 ?>

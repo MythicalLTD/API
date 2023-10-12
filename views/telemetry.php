@@ -15,6 +15,7 @@ $tableData = [];
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $tableData[] = [
+            $row["id"],
             $row["project"],
             $row["action"],
             $row["osName"],
@@ -118,6 +119,7 @@ $tableDataJSON = json_encode($tableData);
         <table id="telemetryTable" class="table table-striped table-bordered">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Project</th>
                     <th>Action</th>
                     <th>OS Name</th>

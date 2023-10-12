@@ -15,6 +15,7 @@ $tableData = [];
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $tableData[] = [
+            $row["id"],
             $row["project"],
             $row["type"],
             $row["title"],
@@ -115,10 +116,12 @@ $tableDataJSON = json_encode($tableData);
         <table id="problemsTable" class="table table-striped table-bordered">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Project</th>
                     <th>Type</th>
                     <th>Title</th>
                     <th>Date</th>
+                    <th>Action</th>
                 </tr>
             </thead>
         </table>
@@ -148,58 +151,70 @@ $tableDataJSON = json_encode($tableData);
         </div>
     </div>
     <script>
-    $(document).ready(function () {
-        var tableData = <?= $tableDataJSON ?>;
-        
-        // Create an object to store chart data
-        var chartData = {
-            projectCounts: {},
-            problemtype: {},
-            problemtitle: {},
-        };
+        $(document).ready(function () {
+            var tableData = <?= $tableDataJSON ?>;
+            var chartData = {
+                projectCounts: {},
+                problemtype: {},
+                problemtitle: {},
+            };
 
-        // Iterate through the table data and count occurrences for each category
-        tableData.forEach(function (row) {
-            chartData.projectCounts[row[0]] = (chartData.projectCounts[row[0]] || 0) + 1;
-            chartData.problemtype[row[1]] = (chartData.problemtype[row[1]] || 0) + 1;
-            chartData.problemtitle[row[2]] = (chartData.problemtitle[row[2]] || 0) + 1;
-        });
-
-        createPieChart("popularprojects", Object.keys(chartData.projectCounts), Object.values(chartData.projectCounts));
-        createPieChart("popularproblemstype", Object.keys(chartData.problemtype), Object.values(chartData.problemtype));
-        createPieChart("popularproblemstitle", Object.keys(chartData.problemtitle), Object.values(chartData.problemtitle));
-
-        function createPieChart(chartId, labels, data) {
-            var ctx = document.getElementById(chartId).getContext('2d');
-            new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        data: data,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.7)',
-                            'rgba(54, 162, 235, 0.7)',
-                            'rgba(255, 206, 86, 0.7)',
-                            'rgba(75, 192, 192, 0.7)',
-                        ],
-                        borderWidth: 1
-                    }]
-                },
+            tableData.forEach(function (row) {
+                chartData.projectCounts[row[1]] = (chartData.projectCounts[row[1]] || 0) + 1;
+                chartData.problemtype[row[2]] = (chartData.problemtype[row[2]] || 0) + 1;
+                chartData.problemtitle[row[3]] = (chartData.problemtitle[row[3]] || 0) + 1;
             });
-        }
-    });
-</script>
+
+            createPieChart("popularprojects", Object.keys(chartData.projectCounts), Object.values(chartData.projectCounts));
+            createPieChart("popularproblemstype", Object.keys(chartData.problemtype), Object.values(chartData.problemtype));
+            createPieChart("popularproblemstitle", Object.keys(chartData.problemtitle), Object.values(chartData.problemtitle));
+
+            function createPieChart(chartId, labels, data) {
+                var ctx = document.getElementById(chartId).getContext('2d');
+                new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: data,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.7)',
+                                'rgba(54, 162, 235, 0.7)',
+                                'rgba(255, 206, 86, 0.7)',
+                                'rgba(75, 192, 192, 0.7)',
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                });
+            }
+        });
+    </script>
 
     <script>
         $(document).ready(function () {
+            var tableData = <?= $tableDataJSON ?>;
+
             var table = $('#problemsTable').DataTable({
-                "paging": true,  
-                "searching": true,  
-                "info": true, 
+                "paging": true,
+                "searching": true,
+                "info": true,
+                "columnDefs": [{
+                    "targets": -1,
+                    "data": null,
+                    "defaultContent": '<button class="btn btn-primary">Download report</button>'
+                }]
             });
-            table.rows.add(<?= $tableDataJSON ?>).draw();
+
+            table.rows.add(tableData).draw();
+
+            $('#problemsTable tbody').on('click', 'button', function () {
+                var data = table.row($(this).parents('tr')).data();
+                var problemId = data[0]; 
+                window.location.href = '/ui/problems/show?id=' + problemId;
+            });
         });
+
     </script>
 
 </body>
