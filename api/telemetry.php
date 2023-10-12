@@ -13,9 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         if (isset($_GET['project']) && !empty($_GET['project'])) {
             if (isset($_GET['action']) && !empty($_GET['action'])) {
                 $osName = isset($_GET['osName']) ? mysqli_real_escape_string($conn, $_GET['osName']) : "Unknown";
-                $kernelName = isset($_GET['kernelName']) ? mysqli_real_escape_string($conn, $_GET['kernelName']) : "kernelName";
-                $cpuArchitecture = isset($_GET['cpuArchitecture']) ? mysqli_real_escape_string($conn, $_GET['cpuArchitecture']) : "cpuArchitecture";
-                $osArchitecture = isset($_GET['osArchitecture']) ? mysqli_real_escape_string($conn, $_GET['osArchitecture']) : "osArchitecture";
+                $kernelName = isset($_GET['kernelName']) ? mysqli_real_escape_string($conn, $_GET['kernelName']) : "Unknown";
+                $cpuArchitecture = isset($_GET['cpuArchitecture']) ? mysqli_real_escape_string($conn, $_GET['cpuArchitecture']) : "Unknown";
+                $osArchitecture = isset($_GET['osArchitecture']) ? mysqli_real_escape_string($conn, $_GET['osArchitecture']) : "Unknown";
 
                 $project = mysqli_real_escape_string($conn, $_GET['project']);
                 $action = mysqli_real_escape_string($conn, $_GET['action']);
