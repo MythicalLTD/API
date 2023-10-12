@@ -1,0 +1,455 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2023-10-12T18:24:32.106Z",
+    "__export_source": "insomnia.desktop.app:v8.2.0",
+    "resources": [
+        {
+            "_id": "req_13c011437aaf4bf4a978c1e1003654b5",
+            "parentId": "fld_92943ae38b614bf2b3d91369dfecdc45",
+            "modified": 1697126737617,
+            "created": 1697126519443,
+            "url": "https://api.mythicalsystems.me/projects/defaultconfig",
+            "name": "Default Config",
+            "description": "The default info for our projects is things like the logo name, banner, favicon, and a lot more.\n\n## Example response - 200:\n```json\n{\n\t\"code\": 200,\n\t\"error\": null,\n\t\"data\": {\n\t\t\"name\": \"MythicalSystems\",\n\t\t\"logo\": \"https://avatars.githubusercontent.com/u/117385445\",\n\t\t\"banner\": \"https://camo.githubusercontent.com/4cf45904e67161611071520974b92a39ef49544ad2c03c027a4e07bf7f44d871/68747470733a2f2f692e696d6775722e636f6d2f784933474c46632e6a706567\",\n\t\t\"description\": \"Welcome to the enchanting realm where magic begins! Since our inception in 2021, we have garnered the trust of over 10,000 users.\",\n\t\t\"links\": {\n\t\t\t\"website\": \"https://mythicalsystems.me\",\n\t\t\t\"status\": \"https://status.mythicalsystems.me\",\n\t\t\t\"phpmyadmin\": \"https://pma.mythicalsystems.me\",\n\t\t\t\"discord\": \"https://discord.gg/eWUYVEZVxz\",\n\t\t\t\"github\": \"https://github.com/mythicalltd\",\n\t\t\t\"paypal\": \"https://paypal.me/mythicalsystems\",\n\t\t\t\"privacy_policy\": \"https://mythicalsystems.me/privacy.php\",\n\t\t\t\"terms_of_service\": \"https://mythicalsystems.me/terms.php\",\n\t\t\t\"documentations\": \"https://docs.mythicalsystems.me\",\n\t\t\t\"company_houses\": \"https://find-and-update.company-information.service.gov.uk/company/15124191\"\n\t\t}\n\t}\n}\n```",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.2.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1697126614793,
+            "isPrivate": false,
+            "settingStoreCookies": false,
+            "settingSendCookies": false,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": false,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_92943ae38b614bf2b3d91369dfecdc45",
+            "parentId": "wrk_1f3a7892be89494c9c17e233d575c7e2",
+            "modified": 1697126498718,
+            "created": 1697126498718,
+            "name": "Projects",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1697126498718,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_1f3a7892be89494c9c17e233d575c7e2",
+            "parentId": null,
+            "modified": 1697122714469,
+            "created": 1697122714469,
+            "name": "MythicalSystems API",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_b483e14bd9bd452aa2e2c9498b48fc6c",
+            "parentId": "fld_006952dd1c3d4ce9aa7ca12a752ecf52",
+            "modified": 1697124376892,
+            "created": 1697124165956,
+            "url": "https://api.mythicalsystems.me/errors/400",
+            "name": "400",
+            "description": "This is just a template for the errors that you can get. ",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.2.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1697124168212,
+            "isPrivate": false,
+            "settingStoreCookies": false,
+            "settingSendCookies": false,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": false,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_006952dd1c3d4ce9aa7ca12a752ecf52",
+            "parentId": "wrk_1f3a7892be89494c9c17e233d575c7e2",
+            "modified": 1697124158624,
+            "created": 1697124158624,
+            "name": "Errors",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1697124158624,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_842c906bf9284168b1bc262b59fb19ba",
+            "parentId": "fld_006952dd1c3d4ce9aa7ca12a752ecf52",
+            "modified": 1697124369635,
+            "created": 1697124241436,
+            "url": "https://api.mythicalsystems.me/errors/401",
+            "name": "401",
+            "description": "This is just a template for the errors that you can get. \n\n",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.2.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1697124168112,
+            "isPrivate": false,
+            "settingStoreCookies": false,
+            "settingSendCookies": false,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": false,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_11d7d6d41c5e443ea1b9dcf992d36868",
+            "parentId": "fld_006952dd1c3d4ce9aa7ca12a752ecf52",
+            "modified": 1697124367324,
+            "created": 1697124263064,
+            "url": "https://api.mythicalsystems.me/errors/403",
+            "name": "403",
+            "description": "This is just a template for the errors that you can get. ",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.2.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1697124168062,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_bc4c58e67d524336834f681fff59e439",
+            "parentId": "fld_006952dd1c3d4ce9aa7ca12a752ecf52",
+            "modified": 1697124364714,
+            "created": 1697124311202,
+            "url": "https://api.mythicalsystems.me/errors/404",
+            "name": "404",
+            "description": "This is just a template for the errors that you can get. \n\n",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.2.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1697124167962,
+            "isPrivate": false,
+            "settingStoreCookies": false,
+            "settingSendCookies": false,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": false,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_4e2d5f4d1eea47dfba4f32f89c05ba2b",
+            "parentId": "fld_006952dd1c3d4ce9aa7ca12a752ecf52",
+            "modified": 1697124361826,
+            "created": 1697124333727,
+            "url": "https://api.mythicalsystems.me/errors/500",
+            "name": "500",
+            "description": "This is just a template for the errors that you can get. \n\n",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.2.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1697124167862,
+            "isPrivate": false,
+            "settingStoreCookies": false,
+            "settingSendCookies": false,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": false,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_14b5da650dfb4221be300daf0a794abf",
+            "parentId": "wrk_1f3a7892be89494c9c17e233d575c7e2",
+            "modified": 1697123020465,
+            "created": 1697122750084,
+            "url": "https://api.mythicalsystems.me",
+            "name": "Main Endpoint",
+            "description": "Welcome to MythicalSystems main API endpoint. This page does not do anything. It's just a main template to let the users know what this API does!",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.2.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1697122750084,
+            "isPrivate": false,
+            "settingStoreCookies": false,
+            "settingSendCookies": false,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": false,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_ff5220426c8b4956bd0688fd242f28c7",
+            "parentId": "wrk_1f3a7892be89494c9c17e233d575c7e2",
+            "modified": 1697131655875,
+            "created": 1697124434960,
+            "url": "https://api.mythicalsystems.me/telemetry",
+            "name": "Telemetry",
+            "description": "This is a request to send telemetry data for some of our applications.\n\n## Include parameters\n\n| Parameter   |      Description      |  Required   |\n|-|-|-|\n| authKey |The data verification key|yes|\n| project |The project name is used to identify what project sent that telemetry.|yes  |\n| action  |The data that was sent.|yes  |\n| osName  |The name of the os.||\n| kernelName  |The kernel name of the os.||\n| cpuArchitecture  |The cpu architecture (amd/arm).||\n| osArchitecture  |The os architecture (32/64)x.||\n    \n\n## Example response - 200:\n```json\n{\n\t\"code\": 200,\n\t\"error\": null,\n\t\"message\": \"The telemetry request was added to the database successfully!\"\n}\n```",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [
+                {
+                    "id": "pair_e30f53dc9aa6429e805a5aa48518752d",
+                    "name": "authKey",
+                    "value": "AxWTnecj85SI4bG6rIP8bvw2uCF7W5MmkJcQIkrYS80MzeTraQWyICL690XOio8F",
+                    "description": "The data verification key is a unique key that allows telemetry only if the key is correct.",
+                    "type": "text",
+                    "multiline": false
+                },
+                {
+                    "id": "pair_454cf8bf4e904ef59966c105d7a0374b",
+                    "name": "project",
+                    "value": "mythicaldash",
+                    "description": "The project name is used to identify what project sent that telemetry."
+                },
+                {
+                    "id": "pair_99cae179901a49b1bfe5911d141d98a2",
+                    "name": "action",
+                    "value": "install",
+                    "description": "The data that was sent."
+                },
+                {
+                    "id": "pair_0487b8892c0f40a297aa301335a1e96e",
+                    "name": "osName",
+                    "value": "Windwos 11",
+                    "description": ""
+                },
+                {
+                    "id": "pair_c848193618304f27a58e0cf8c958c884",
+                    "name": "kernelName",
+                    "value": "win",
+                    "description": ""
+                },
+                {
+                    "id": "pair_02ed822b3d594e2688e50e85774d7b54",
+                    "name": "cpuArchitecture",
+                    "value": "amd",
+                    "description": ""
+                },
+                {
+                    "id": "pair_e75d31f8011d449588d0a2552b60398c",
+                    "name": "osArchitecture",
+                    "value": "64",
+                    "description": ""
+                }
+            ],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.2.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1697122749984,
+            "isPrivate": false,
+            "settingStoreCookies": false,
+            "settingSendCookies": false,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": false,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_faeb6738003f45bfbaa30475b3042c59",
+            "parentId": "wrk_1f3a7892be89494c9c17e233d575c7e2",
+            "modified": 1697134087179,
+            "created": 1697126986875,
+            "url": "https://api.mythicalsystems.me/problem",
+            "name": "Problem",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [
+                {
+                    "id": "pair_00c816ef6fa74fb8a661422d919a27e8",
+                    "name": "authKey",
+                    "value": "AxWTnecj85SI4bG6rIP8bvw2uCF7W5MmkJcQIkrYS80MzeTraQWyICL690XOio8F",
+                    "description": ""
+                },
+                {
+                    "id": "pair_d09fe2b066ca4b90b4cfb4364b6ece79",
+                    "name": "project",
+                    "value": "mythicaldash",
+                    "description": ""
+                },
+                {
+                    "id": "pair_344cee747b5a4a1c84cc3a05bdf509a0",
+                    "name": "type",
+                    "value": "warning",
+                    "description": ""
+                },
+                {
+                    "id": "pair_fb5ccde1f61c438789c59e59d7c42308",
+                    "name": "title",
+                    "value": "Failed to get the composer packages ",
+                    "description": ""
+                },
+                {
+                    "id": "pair_a68b02f6e888437fa5c8214fd87b3978",
+                    "name": "message",
+                    "value": "Please reinstall mythicaldash",
+                    "description": ""
+                }
+            ],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.2.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1697122749884,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_b2d6fe793c19412d516ee549d9b28c97ea32d666",
+            "parentId": "wrk_1f3a7892be89494c9c17e233d575c7e2",
+            "modified": 1697122714471,
+            "created": 1697122714471,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1697122714471,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_b2d6fe793c19412d516ee549d9b28c97ea32d666",
+            "parentId": "wrk_1f3a7892be89494c9c17e233d575c7e2",
+            "modified": 1697122714472,
+            "created": 1697122714472,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        }
+    ]
+}
