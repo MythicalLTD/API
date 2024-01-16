@@ -6,6 +6,10 @@ $router->add('/', function () {
 
 $router->add('/projects/defaultconfig', function () {
     require("../api/projects/config.php");
+});
+
+$router->add('/projects/webserverconf', function () {
+    require("../api/projects/genwebconfig.php");
 
 });
 
