@@ -15,6 +15,9 @@ include(__DIR__."/../routes/base.php");
 include(__DIR__."/../routes/auth.php");
 include(__DIR__."/../routes/projects.php");
 include(__DIR__."/../routes/ui.php");
+include(__DIR__."/../routes/license.php");
+include(__DIR__."/../routes/log.php");
+
 
 $router->add("/(.*)", function () {
     require("../api/errors/404.php");

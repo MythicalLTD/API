@@ -19,7 +19,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "mythicalsystems/php-router": "^1.0",
+        "mythicalsystems/core": "^1.0",
         "ext-pdo": "*",
         "symfony/yaml": "^6.3"
     },

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$csrf = new MythicalSystems\CSRF;
+$csrf = new MythicalSystems\Utils\CSRFHandler;
 use MythicalSystems\AppConfig;
 use MythicalSystems\CloudFlare\Captcha;
 use MythicalSystems\Session\SessionManager;

@@ -43,3 +43,16 @@ ALTER TABLE `users`
 
 ALTER TABLE `telemetry`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+CREATE TABLE `mythicalsystems_api`.`logs` (`id` INT NOT NULL , `log` TEXT NOT NULL , `mkey` TEXT NOT NULL , `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ) ENGINE = InnoDB;
+
+CREATE TABLE `licenses` (  `id` int(11) NOT NULL,  `licensekey` text NOT NULL,  `url` text NOT NULL,  `registered_name` text NOT NULL,  `registered_support_email` text NOT NULL,  `registered_date_registered` datetime NOT NULL DEFAULT current_timestamp(),  `registered_date_expire` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+ALTER TABLE `licenses`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `licenses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `logs` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT, add PRIMARY KEY (`id`);
